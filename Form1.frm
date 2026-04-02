@@ -1,13 +1,13 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "KEY VIETSTAR"
-   ClientHeight    =   1815
+   ClientHeight    =   2115
    ClientLeft      =   120
    ClientTop       =   450
-   ClientWidth     =   7140
+   ClientWidth     =   7350
    LinkTopic       =   "Form1"
-   ScaleHeight     =   1815
-   ScaleWidth      =   7140
+   ScaleHeight     =   2115
+   ScaleWidth      =   7350
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton Command3 
       Caption         =   "Daùn key"
@@ -114,12 +114,11 @@ Begin VB.Form Form1
    Begin VB.TextBox Text1 
       Height          =   495
       Index           =   6
-      Left            =   6960
+      Left            =   120
       TabIndex        =   6
       Text            =   "Text1"
-      Top             =   4680
-      Visible         =   0   'False
-      Width           =   1935
+      Top             =   2880
+      Width           =   7215
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
