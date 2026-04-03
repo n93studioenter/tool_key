@@ -3,16 +3,24 @@ Begin VB.Form Form3
    BackColor       =   &H80000016&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Form3"
-   ClientHeight    =   3750
+   ClientHeight    =   5010
    ClientLeft      =   45
    ClientTop       =   330
    ClientWidth     =   10665
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3750
+   ScaleHeight     =   5010
    ScaleWidth      =   10665
    StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox Text3 
+      Height          =   405
+      Left            =   360
+      TabIndex        =   27
+      Text            =   "Text3"
+      Top             =   4440
+      Width           =   9615
+   End
    Begin VB.TextBox txtMST 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -27,21 +35,20 @@ Begin VB.Form Form3
       Height          =   405
       Index           =   1
       Left            =   5640
-      TabIndex        =   27
-      Top             =   1680
+      TabIndex        =   25
+      Top             =   1320
       Width           =   3615
    End
    Begin VB.TextBox Text2 
       Height          =   375
       Left            =   360
-      TabIndex        =   26
+      TabIndex        =   24
       Text            =   "Text2"
       Top             =   3840
-      Visible         =   0   'False
       Width           =   9495
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H80000016&
+      BackColor       =   &H00C0C0C0&
       Caption         =   "Thoâng tin ñaêng kyù license "
       BeginProperty Font 
          Name            =   "VNI-Times"
@@ -52,13 +59,13 @@ Begin VB.Form Form3
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1575
+      Height          =   1095
       Left            =   240
       TabIndex        =   19
       Top             =   0
       Width           =   10095
       Begin VB.Label Label1 
-         BackColor       =   &H80000016&
+         BackColor       =   &H00C0C0C0&
          Caption         =   "Soá chöùng töø"
          BeginProperty Font 
             Name            =   "VNI-Times"
@@ -72,32 +79,42 @@ Begin VB.Form Form3
          Height          =   255
          Index           =   2
          Left            =   240
-         TabIndex        =   25
-         Top             =   1080
+         TabIndex        =   23
+         Top             =   645
          Width           =   1095
       End
       Begin VB.Label Label2 
-         BackColor       =   &H80000016&
+         BackColor       =   &H00C0C0C0&
          Caption         =   "..."
          Height          =   255
          Index           =   1
-         Left            =   1920
-         TabIndex        =   24
-         Top             =   1080
+         Left            =   2160
+         TabIndex        =   22
+         Top             =   650
          Width           =   6495
       End
       Begin VB.Label Label2 
-         BackColor       =   &H80000016&
+         BackColor       =   &H00C0C0C0&
          Caption         =   "..."
+         BeginProperty Font 
+            Name            =   "VK Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
          Height          =   255
          Index           =   0
-         Left            =   1920
-         TabIndex        =   23
-         Top             =   720
+         Left            =   2160
+         TabIndex        =   21
+         Top             =   320
          Width           =   5415
       End
       Begin VB.Label Label1 
-         BackColor       =   &H80000016&
+         BackColor       =   &H00C0C0C0&
          Caption         =   " Hình thöùc ñaêng kyù"
          BeginProperty Font 
             Name            =   "VNI-Times"
@@ -111,38 +128,9 @@ Begin VB.Form Form3
          Height          =   255
          Index           =   1
          Left            =   120
-         TabIndex        =   22
-         Top             =   720
-         Width           =   1695
-      End
-      Begin VB.Label Label2 
-         BackColor       =   &H80000016&
-         Caption         =   "..."
-         Height          =   255
-         Index           =   2
-         Left            =   1920
-         TabIndex        =   21
-         Top             =   360
-         Width           =   4935
-      End
-      Begin VB.Label Label1 
-         BackColor       =   &H80000016&
-         Caption         =   " Teân Cty"
-         BeginProperty Font 
-            Name            =   "VNI-Times"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   3
-         Left            =   120
          TabIndex        =   20
-         Top             =   360
-         Width           =   855
+         Top             =   320
+         Width           =   1695
       End
    End
    Begin VB.TextBox Text1 
@@ -159,7 +147,7 @@ Begin VB.Form Form3
       Index           =   12
       Left            =   7920
       TabIndex        =   18
-      Top             =   3120
+      Top             =   2760
       Width           =   1335
    End
    Begin VB.TextBox Text1 
@@ -174,10 +162,10 @@ Begin VB.Form Form3
       EndProperty
       Height          =   420
       Index           =   11
-      Left            =   6360
+      Left            =   6480
       TabIndex        =   17
-      Top             =   3120
-      Width           =   1575
+      Top             =   2760
+      Width           =   1455
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -193,7 +181,7 @@ Begin VB.Form Form3
       Index           =   10
       Left            =   1320
       TabIndex        =   15
-      Top             =   3120
+      Top             =   2760
       Width           =   615
    End
    Begin VB.TextBox Text1 
@@ -210,8 +198,8 @@ Begin VB.Form Form3
       Index           =   7
       Left            =   1920
       TabIndex        =   14
-      Top             =   3120
-      Width           =   1815
+      Top             =   2760
+      Width           =   2295
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -225,10 +213,10 @@ Begin VB.Form Form3
       EndProperty
       Height          =   420
       Index           =   8
-      Left            =   3720
+      Left            =   4200
       TabIndex        =   13
-      Top             =   3120
-      Width           =   1335
+      Top             =   2760
+      Width           =   1095
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -242,9 +230,9 @@ Begin VB.Form Form3
       EndProperty
       Height          =   420
       Index           =   9
-      Left            =   5040
+      Left            =   5280
       TabIndex        =   12
-      Top             =   3120
+      Top             =   2760
       Width           =   1335
    End
    Begin VB.CommandButton Command2 
@@ -261,7 +249,7 @@ Begin VB.Form Form3
       Height          =   420
       Left            =   9360
       TabIndex        =   11
-      Top             =   3120
+      Top             =   2760
       Width           =   975
    End
    Begin VB.TextBox Text1 
@@ -278,7 +266,7 @@ Begin VB.Form Form3
       Index           =   6
       Left            =   7920
       TabIndex        =   10
-      Top             =   2400
+      Top             =   2040
       Width           =   1335
    End
    Begin VB.TextBox Text1 
@@ -293,10 +281,10 @@ Begin VB.Form Form3
       EndProperty
       Height          =   420
       Index           =   5
-      Left            =   6360
+      Left            =   6480
       TabIndex        =   9
-      Top             =   2400
-      Width           =   1575
+      Top             =   2040
+      Width           =   1455
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Laáy key"
@@ -312,7 +300,7 @@ Begin VB.Form Form3
       Height          =   420
       Left            =   9360
       TabIndex        =   7
-      Top             =   2400
+      Top             =   2040
       Width           =   975
    End
    Begin VB.TextBox Text1 
@@ -329,7 +317,7 @@ Begin VB.Form Form3
       Index           =   1
       Left            =   1320
       TabIndex        =   6
-      Top             =   2400
+      Top             =   2040
       Width           =   615
    End
    Begin VB.TextBox Text1 
@@ -346,8 +334,8 @@ Begin VB.Form Form3
       Index           =   2
       Left            =   1920
       TabIndex        =   5
-      Top             =   2400
-      Width           =   1815
+      Top             =   2040
+      Width           =   2295
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -361,10 +349,10 @@ Begin VB.Form Form3
       EndProperty
       Height          =   420
       Index           =   3
-      Left            =   3720
+      Left            =   4200
       TabIndex        =   4
-      Top             =   2400
-      Width           =   1335
+      Top             =   2040
+      Width           =   1095
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -378,10 +366,10 @@ Begin VB.Form Form3
       EndProperty
       Height          =   420
       Index           =   4
-      Left            =   5040
+      Left            =   5280
       TabIndex        =   3
-      Top             =   2400
-      Width           =   1335
+      Top             =   2040
+      Width           =   1215
    End
    Begin VB.TextBox txtMST 
       BeginProperty Font 
@@ -397,7 +385,7 @@ Begin VB.Form Form3
       Index           =   0
       Left            =   1320
       TabIndex        =   1
-      Top             =   1680
+      Top             =   1320
       Width           =   3495
    End
    Begin VB.CommandButton Command3 
@@ -414,7 +402,7 @@ Begin VB.Form Form3
       Height          =   375
       Left            =   9360
       TabIndex        =   0
-      Top             =   1680
+      Top             =   1320
       Width           =   975
    End
    Begin VB.Label Label1 
@@ -432,8 +420,8 @@ Begin VB.Form Form3
       Height          =   495
       Index           =   6
       Left            =   5040
-      TabIndex        =   28
-      Top             =   1800
+      TabIndex        =   26
+      Top             =   1440
       Width           =   495
    End
    Begin VB.Label Label1 
@@ -452,7 +440,7 @@ Begin VB.Form Form3
       Index           =   5
       Left            =   360
       TabIndex        =   16
-      Top             =   3240
+      Top             =   2880
       Width           =   1215
    End
    Begin VB.Label Label1 
@@ -471,7 +459,7 @@ Begin VB.Form Form3
       Index           =   4
       Left            =   360
       TabIndex        =   8
-      Top             =   2400
+      Top             =   2040
       Width           =   855
    End
    Begin VB.Label Label1 
@@ -490,7 +478,7 @@ Begin VB.Form Form3
       Index           =   0
       Left            =   360
       TabIndex        =   2
-      Top             =   1680
+      Top             =   1320
       Width           =   975
    End
 End
@@ -836,46 +824,45 @@ Public Function FormatMAC(ByVal mac As String) As String
     
     FormatMAC = result
 End Function
- 
+
 
 'random 6 cho 1_2
-Public Function EncodeWithRandom6(ByVal strValue As String) As String
+Public Function EncodeWithRandom6(ByVal strValue As String, ByRef randomNum As Long) As String
     Dim parts() As String
     Dim num1 As Long   ' <--- S?A: num1, không ph?i numl
     Dim num2 As Long
-    Dim randomNum As Long
     Dim combined As Long
-    
+
     On Error GoTo ErrorHandler
-    
+
     ' Tách chu?i d?ng "1_2"
     parts = Split(strValue, "_")
-    
+
     If UBound(parts) <> 1 Then
         EncodeWithRandom6 = "ERROR"
         Exit Function
     End If
-    
+
     num1 = CLng(parts(0))
     num2 = CLng(parts(1))
-    
+
     ' Gi?i h?n m?i s? trong 0-999
     If num1 > 999 Or num2 > 999 Then   ' <--- S?A: num1
         EncodeWithRandom6 = "ERROR"
         Exit Function
     End If
-    
+
     ' T?o s? random 4 ch? s?
-    Randomize
-    randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
-    
+    'Randomize
+    'randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
+
     ' K?t h?p: randomNum (4 ch? s?) + num1 (3 ch? s?) + num2 (3 ch? s?)
     combined = randomNum * 1000000 + num1 * 1000 + num2   ' <--- S?A: num1
-    
+
     ' Mã hóa thành 6 ký t?
     EncodeWithRandom6 = ToBase36_6(combined)
     Exit Function
-    
+
 ErrorHandler:
     EncodeWithRandom6 = "ERROR"
 End Function
@@ -1275,6 +1262,11 @@ Private Function DecodeString(ByVal code As String) As String
     DecodeString = CStr(num)
 End Function
 
+Private Sub Command2_Click()
+    Clipboard.Clear
+    Clipboard.SetText Trim(Text3.Text)
+End Sub
+
 Private Sub Command3_Click()
     Text2.Text = Clipboard.GetText()
     Dim s As String
@@ -1285,6 +1277,8 @@ Private Sub Command3_Click()
     Dim encoded10 As String
     s = Text2.Text
     arr = Split(s, "*")
+
+
 
     For i = 0 To UBound(arr)
         Debug.Print arr(i)
@@ -1299,9 +1293,21 @@ Private Sub Command3_Click()
         End If
         If i = 2 Then
             Text1(3).Text = arr(i)
+            Dim data12 As String
+            data12 = DecodeWithRandom6(Text1(3).Text, Text1(1).Text)
+            'Tách ra -
+            Dim arr3() As String
+            arr3 = Split(data12, "_")
+            If arr3(0) = "1" Then
+                Label2(0).Caption = arr3(1) & " N¨m"
+            Else
+                Label2(0).Caption = "VÜnh viÔn"
+            End If
+
         End If
         If i = 3 Then
             Text1(4).Text = arr(i)
+            Label2(1).Caption = Format(DecodeLicense6(Text1(4).Text, Text1(1).Text), "#,##0")
         End If
         If i = 4 Then
             Text1(5).Text = arr2(0)
@@ -1309,16 +1315,29 @@ Private Sub Command3_Click()
             txtMST(1).Text = FormatMAC(DecodeMAC12(arr(4)))
         End If
 
-        'Thuc thi viec ma hoa key de gui nguoc lai cho user
-        'Thuc hien random ma truoc
-        Randomize
-        Dim randomNum As Long
-        Do
-            randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
-        Loop While randomNum = CLng(Text1(1).Text)
-        Text1(10).Text = randomNum
-        'encode mst
-        Text1(7).Text = EncodeMST8(txtMST(0).Text, randomNum)
+
     Next
+    'Thuc thi viec ma hoa key de gui nguoc lai cho user
+    'Thuc hien random ma truoc
+    Randomize
+    Dim randomNum As Long
+    Do
+        randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
+    Loop While randomNum = CLng(Text1(1).Text)
+    Text1(10).Text = randomNum
+    'encode mst
+    Text1(7).Text = EncodeMST8(txtMST(0).Text, randomNum)
+    'Decode 1_2
+
+    Text1(8).Text = EncodeWithRandom6(data12, randomNum)
+    Text1(9).Text = EncodeLicense6(DecodeLicense6(Text1(4).Text, Text1(1).Text), randomNum)
+    Dim encmac As String
+    encmac = EncodeMAC12(txtMST(1).Text)
+    Dim arr4() As String
+    arr4 = Split(encmac, "-")
+    Text1(11).Text = arr4(0)
+    Text1(12).Text = arr4(1)
+
+    Text3.Text = Text1(10).Text & "*" & Text1(7).Text & "*" & Text1(8).Text & "*" & Text1(9).Text & "*" & encmac
 End Sub
 
