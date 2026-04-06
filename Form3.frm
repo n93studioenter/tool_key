@@ -2,16 +2,16 @@ VERSION 5.00
 Begin VB.Form Form3 
    BackColor       =   &H80000016&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Form3"
-   ClientHeight    =   5010
+   Caption         =   "KEY VIETSTAR"
+   ClientHeight    =   2700
    ClientLeft      =   45
    ClientTop       =   330
-   ClientWidth     =   10665
+   ClientWidth     =   10515
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5010
-   ScaleWidth      =   10665
+   ScaleHeight     =   2700
+   ScaleWidth      =   10515
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox Text3 
       Height          =   405
@@ -19,6 +19,7 @@ Begin VB.Form Form3
       TabIndex        =   27
       Text            =   "Text3"
       Top             =   4440
+      Visible         =   0   'False
       Width           =   9615
    End
    Begin VB.TextBox txtMST 
@@ -36,7 +37,7 @@ Begin VB.Form Form3
       Index           =   1
       Left            =   5640
       TabIndex        =   25
-      Top             =   1320
+      Top             =   1200
       Width           =   3615
    End
    Begin VB.TextBox Text2 
@@ -45,10 +46,11 @@ Begin VB.Form Form3
       TabIndex        =   24
       Text            =   "Text2"
       Top             =   3840
+      Visible         =   0   'False
       Width           =   9495
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00C0C0C0&
+      BackColor       =   &H80000016&
       Caption         =   "Thoâng tin ñaêng kyù license "
       BeginProperty Font 
          Name            =   "VNI-Times"
@@ -65,7 +67,7 @@ Begin VB.Form Form3
       Top             =   0
       Width           =   10095
       Begin VB.Label Label1 
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000016&
          Caption         =   "Soá chöùng töø"
          BeginProperty Font 
             Name            =   "VNI-Times"
@@ -84,7 +86,7 @@ Begin VB.Form Form3
          Width           =   1095
       End
       Begin VB.Label Label2 
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000016&
          Caption         =   "..."
          Height          =   255
          Index           =   1
@@ -94,7 +96,7 @@ Begin VB.Form Form3
          Width           =   6495
       End
       Begin VB.Label Label2 
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000016&
          Caption         =   "..."
          BeginProperty Font 
             Name            =   "VK Sans Serif"
@@ -114,7 +116,7 @@ Begin VB.Form Form3
          Width           =   5415
       End
       Begin VB.Label Label1 
-         BackColor       =   &H00C0C0C0&
+         BackColor       =   &H80000016&
          Caption         =   " Hình thöùc ñaêng kyù"
          BeginProperty Font 
             Name            =   "VNI-Times"
@@ -147,7 +149,7 @@ Begin VB.Form Form3
       Index           =   12
       Left            =   7920
       TabIndex        =   18
-      Top             =   2760
+      Top             =   2160
       Width           =   1335
    End
    Begin VB.TextBox Text1 
@@ -164,7 +166,7 @@ Begin VB.Form Form3
       Index           =   11
       Left            =   6480
       TabIndex        =   17
-      Top             =   2760
+      Top             =   2160
       Width           =   1455
    End
    Begin VB.TextBox Text1 
@@ -181,7 +183,7 @@ Begin VB.Form Form3
       Index           =   10
       Left            =   1320
       TabIndex        =   15
-      Top             =   2760
+      Top             =   2160
       Width           =   615
    End
    Begin VB.TextBox Text1 
@@ -198,7 +200,7 @@ Begin VB.Form Form3
       Index           =   7
       Left            =   1920
       TabIndex        =   14
-      Top             =   2760
+      Top             =   2160
       Width           =   2295
    End
    Begin VB.TextBox Text1 
@@ -215,7 +217,7 @@ Begin VB.Form Form3
       Index           =   8
       Left            =   4200
       TabIndex        =   13
-      Top             =   2760
+      Top             =   2160
       Width           =   1095
    End
    Begin VB.TextBox Text1 
@@ -232,8 +234,8 @@ Begin VB.Form Form3
       Index           =   9
       Left            =   5280
       TabIndex        =   12
-      Top             =   2760
-      Width           =   1335
+      Top             =   2160
+      Width           =   1215
    End
    Begin VB.CommandButton Command2 
       Caption         =   "Copy maõ"
@@ -249,7 +251,7 @@ Begin VB.Form Form3
       Height          =   420
       Left            =   9360
       TabIndex        =   11
-      Top             =   2760
+      Top             =   2160
       Width           =   975
    End
    Begin VB.TextBox Text1 
@@ -266,7 +268,7 @@ Begin VB.Form Form3
       Index           =   6
       Left            =   7920
       TabIndex        =   10
-      Top             =   2040
+      Top             =   1680
       Width           =   1335
    End
    Begin VB.TextBox Text1 
@@ -283,7 +285,7 @@ Begin VB.Form Form3
       Index           =   5
       Left            =   6480
       TabIndex        =   9
-      Top             =   2040
+      Top             =   1680
       Width           =   1455
    End
    Begin VB.CommandButton Command1 
@@ -300,7 +302,7 @@ Begin VB.Form Form3
       Height          =   420
       Left            =   9360
       TabIndex        =   7
-      Top             =   2040
+      Top             =   1680
       Width           =   975
    End
    Begin VB.TextBox Text1 
@@ -317,7 +319,7 @@ Begin VB.Form Form3
       Index           =   1
       Left            =   1320
       TabIndex        =   6
-      Top             =   2040
+      Top             =   1680
       Width           =   615
    End
    Begin VB.TextBox Text1 
@@ -334,7 +336,7 @@ Begin VB.Form Form3
       Index           =   2
       Left            =   1920
       TabIndex        =   5
-      Top             =   2040
+      Top             =   1680
       Width           =   2295
    End
    Begin VB.TextBox Text1 
@@ -351,7 +353,7 @@ Begin VB.Form Form3
       Index           =   3
       Left            =   4200
       TabIndex        =   4
-      Top             =   2040
+      Top             =   1680
       Width           =   1095
    End
    Begin VB.TextBox Text1 
@@ -368,7 +370,7 @@ Begin VB.Form Form3
       Index           =   4
       Left            =   5280
       TabIndex        =   3
-      Top             =   2040
+      Top             =   1680
       Width           =   1215
    End
    Begin VB.TextBox txtMST 
@@ -385,7 +387,7 @@ Begin VB.Form Form3
       Index           =   0
       Left            =   1320
       TabIndex        =   1
-      Top             =   1320
+      Top             =   1200
       Width           =   3495
    End
    Begin VB.CommandButton Command3 
@@ -402,7 +404,7 @@ Begin VB.Form Form3
       Height          =   375
       Left            =   9360
       TabIndex        =   0
-      Top             =   1320
+      Top             =   1200
       Width           =   975
    End
    Begin VB.Label Label1 
@@ -421,7 +423,7 @@ Begin VB.Form Form3
       Index           =   6
       Left            =   5040
       TabIndex        =   26
-      Top             =   1440
+      Top             =   1320
       Width           =   495
    End
    Begin VB.Label Label1 
@@ -440,7 +442,7 @@ Begin VB.Form Form3
       Index           =   5
       Left            =   360
       TabIndex        =   16
-      Top             =   2880
+      Top             =   2280
       Width           =   1215
    End
    Begin VB.Label Label1 
@@ -459,7 +461,7 @@ Begin VB.Form Form3
       Index           =   4
       Left            =   360
       TabIndex        =   8
-      Top             =   2040
+      Top             =   1680
       Width           =   855
    End
    Begin VB.Label Label1 
@@ -478,7 +480,7 @@ Begin VB.Form Form3
       Index           =   0
       Left            =   360
       TabIndex        =   2
-      Top             =   1320
+      Top             =   1200
       Width           =   975
    End
 End
@@ -963,7 +965,7 @@ Private Function FromBase36_6(ByVal txt As String) As Long
     Next i
 End Function
 'cho mst
- Public Function EncodeMST8(ByVal mst As String, ByRef randomNum As Long) As String
+Public Function EncodeMST8(ByVal mst As String, ByRef randomNum As Long) As String
     Dim cleanMST As String
     Dim totalLen As Integer
     Dim p1 As String, p2 As String
@@ -972,97 +974,71 @@ End Function
     
     On Error GoTo ErrorHandler
     
-    ' Xóa d?u -
     cleanMST = Replace(mst, "-", "")
     
-    ' Ki?m tra ch? có s?
-    If Not IsNumeric(cleanMST) Then
-        EncodeMST8 = "ERROR"
-        Exit Function
-    End If
+    If Not IsNumeric(cleanMST) Then GoTo ErrorHandler
     
     totalLen = Len(cleanMST)
     
-    ' Phân chia theo d? dài
     Select Case totalLen
         Case 10
             len1 = 5: len2 = 5
-            p1 = Left(cleanMST, len1)
-            p2 = Right(cleanMST, len2)
         Case 12
             len1 = 6: len2 = 6
-            p1 = Left(cleanMST, len1)
-            p2 = Right(cleanMST, len2)
         Case 13
             len1 = 6: len2 = 7
-            p1 = Left(cleanMST, len1)
-            p2 = Right(cleanMST, len2)
         Case Else
-            EncodeMST8 = "ERROR"
-            Exit Function
+            GoTo ErrorHandler
     End Select
     
-    ' T?o s? random 2 ch? s? (10-99)
-    Randomize
+    p1 = Left(cleanMST, len1)
+    p2 = Right(cleanMST, len2)
+    
+    ' ? KHÔNG Randomize ? dây
     randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
     
-    ' Tr?n random vào d? li?u
     mixed1 = MixString(p1, randomNum)
     mixed2 = MixString(p2, randomNum)
     
-    ' Mã: 2 ký t? random + 2 ký t? d? dài + 8 ký t? d? li?u dã tr?n
     EncodeMST8 = ToBase36_2_Fixed(randomNum) & _
                  ToBase36_1(len1) & ToBase36_1(len2) & _
                  EncodeString(mixed1) & EncodeString(mixed2)
     Exit Function
-    
+
 ErrorHandler:
     EncodeMST8 = "ERROR"
 End Function
 
 ' ==============================================
-' DECODE: 12 ký t? -> MST
+' DECODE (ÐÃ FIX M?T S? 0)
 ' ==============================================
 Public Function DecodeMST8(ByVal code As String, ByRef randomNum As Long) As String
     Dim len1 As Integer, len2 As Integer
     Dim mixed1 As String, mixed2 As String
     Dim p1 As String, p2 As String
-    Dim lenCode1 As String, lenCode2 As String
-    Dim dataCode1 As String, dataCode2 As String
-    Dim randomCode As String
     Dim rdn As Long
+    
     On Error GoTo ErrorHandler
 
-    ' Ki?m tra d? dài
-    If Len(code) <> 12 Then
-        DecodeMST8 = "ERROR"
-        Exit Function
-    End If
+    If Len(code) <> 12 Then GoTo ErrorHandler
 
-    ' L?y 2 ký t? random
-    randomCode = Mid(code, 1, 2)
-    rdn = FromBase36_2_Fixed(randomCode)
+    rdn = FromBase36_2_Fixed(Left(code, 2))
+    randomNum = rdn
+    
+    len1 = FromBase36_1(Mid(code, 3, 1))
+    len2 = FromBase36_1(Mid(code, 4, 1))
 
-    ' L?y 2 ký t? d? dài
-    lenCode1 = Mid(code, 3, 1)
-    lenCode2 = Mid(code, 4, 1)
-    len1 = FromBase36_1(lenCode1)
-    len2 = FromBase36_1(lenCode2)
+    mixed1 = DecodeString(Mid(code, 5, 4))
+    mixed2 = DecodeString(Mid(code, 9, 4))
 
-    ' L?y 8 ký t? d? li?u dã encode
-    dataCode1 = Mid(code, 5, 4)
-    dataCode2 = Mid(code, 9, 4)
+    ' ?? FIX QUAN TR?NG: gi? l?i s? 0 d?u
+    mixed1 = Right(String(len1, "0") & mixed1, len1)
+    mixed2 = Right(String(len2, "0") & mixed2, len2)
 
-    ' Gi?i mã d? li?u
-    mixed1 = DecodeString(dataCode1)
-    mixed2 = DecodeString(dataCode2)
-
-    ' Tách random ra kh?i d? li?u
     p1 = UnmixString(mixed1, rdn)
     p2 = UnmixString(mixed2, rdn)
 
-    ' Ghép l?i v?i dúng d? dài (gi? s? 0 d?u)
-    DecodeMST8 = Right(String(len1, "0") & p1, len1) & Right(String(len2, "0") & p2, len2)
+    DecodeMST8 = p1 & p2
     Exit Function
 
 ErrorHandler:
@@ -1070,70 +1046,14 @@ ErrorHandler:
 End Function
 
 ' ==============================================
-' ENCODE: Có th? truy?n random vào (dùng cho test)
-' ==============================================
-Public Function EncodeMST8Ex(ByVal mst As String, ByVal randomNum As Integer) As String
-    Dim cleanMST As String
-    Dim totalLen As Integer
-    Dim p1 As String, p2 As String
-    Dim len1 As Integer, len2 As Integer
-    Dim mixed1 As String, mixed2 As String
-    
-    On Error GoTo ErrorHandler
-    
-    cleanMST = Replace(mst, "-", "")
-    
-    If Not IsNumeric(cleanMST) Then
-        EncodeMST8Ex = "ERROR"
-        Exit Function
-    End If
-    
-    totalLen = Len(cleanMST)
-    
-    Select Case totalLen
-        Case 10
-            len1 = 5: len2 = 5
-            p1 = Left(cleanMST, len1)
-            p2 = Right(cleanMST, len2)
-        Case 12
-            len1 = 6: len2 = 6
-            p1 = Left(cleanMST, len1)
-            p2 = Right(cleanMST, len2)
-        Case 13
-            len1 = 6: len2 = 7
-            p1 = Left(cleanMST, len1)
-            p2 = Right(cleanMST, len2)
-        Case Else
-            EncodeMST8Ex = "ERROR"
-            Exit Function
-    End Select
-    
-    ' Tr?n random vào d? li?u
-    mixed1 = MixString(p1, randomNum)
-    mixed2 = MixString(p2, randomNum)
-    
-    EncodeMST8Ex = ToBase36_2_Fixed(randomNum) & _
-                   ToBase36_1(len1) & ToBase36_1(len2) & _
-                   EncodeString(mixed1) & EncodeString(mixed2)
-    Exit Function
-    
-ErrorHandler:
-    EncodeMST8Ex = "ERROR"
-End Function
-
-' ==============================================
-' HÀM TR?N: Tr?n random vào chu?i s?
+' MIX
 ' ==============================================
 Private Function MixString(ByVal s As String, ByVal key As Integer) As String
-    Dim result As String
-    Dim i As Integer
-    Dim digit As Integer
-    Dim keyDigit As Integer
+    Dim result As String, i As Integer
+    Dim digit As Integer, keyDigit As Integer
     
-    result = ""
     For i = 1 To Len(s)
-        digit = CLng(Mid(s, i, 1))
-        ' L?y ch? s? th? i c?a key (l?p l?i n?u key ng?n)
+        digit = CInt(Mid(s, i, 1))
         keyDigit = (key \ (10 ^ ((i - 1) Mod 2))) Mod 10
         digit = (digit + keyDigit) Mod 10
         result = result & digit
@@ -1143,18 +1063,14 @@ Private Function MixString(ByVal s As String, ByVal key As Integer) As String
 End Function
 
 ' ==============================================
-' HÀM TÁCH: Tách random kh?i chu?i s?
+' UNMIX
 ' ==============================================
 Private Function UnmixString(ByVal s As String, ByVal key As Integer) As String
-    Dim result As String
-    Dim i As Integer
-    Dim digit As Integer
-    Dim keyDigit As Integer
+    Dim result As String, i As Integer
+    Dim digit As Integer, keyDigit As Integer
     
-    result = ""
     For i = 1 To Len(s)
-        digit = CLng(Mid(s, i, 1))
-        ' L?y ch? s? th? i c?a key (l?p l?i n?u key ng?n)
+        digit = CInt(Mid(s, i, 1))
         keyDigit = (key \ (10 ^ ((i - 1) Mod 2))) Mod 10
         digit = (digit - keyDigit) Mod 10
         If digit < 0 Then digit = digit + 10
@@ -1165,19 +1081,13 @@ Private Function UnmixString(ByVal s As String, ByVal key As Integer) As String
 End Function
 
 ' ==============================================
-' Encode 1 ký t? (0-35)
+' BASE36 1 CHAR
 ' ==============================================
 Private Function ToBase36_1(ByVal num As Integer) As String
-    If num < 0 Or num > 35 Then
-        ToBase36_1 = "0"
-    Else
-        ToBase36_1 = Mid(CHARSET, num + 1, 1)
-    End If
+    If num < 0 Or num > 35 Then num = 0
+    ToBase36_1 = Mid(CHARSET, num + 1, 1)
 End Function
 
-' ==============================================
-' Decode 1 ký t? (0-35)
-' ==============================================
 Private Function FromBase36_1(ByVal c As String) As Integer
     Dim pos As Integer
     pos = InStr(CHARSET, c)
@@ -1189,27 +1099,19 @@ Private Function FromBase36_1(ByVal c As String) As Integer
 End Function
 
 ' ==============================================
-' Encode 2 ký t? (LUÔN RA 2 KÝ T?) cho random 10-99
+' BASE36 2 CHAR
 ' ==============================================
 Private Function ToBase36_2_Fixed(ByVal num As Integer) As String
     Dim high As Integer, low As Integer
-    
     high = num \ 36
     low = num Mod 36
-    
     ToBase36_2_Fixed = Mid(CHARSET, high + 1, 1) & Mid(CHARSET, low + 1, 1)
 End Function
 
-' ==============================================
-' Decode 2 ký t? (LUÔN T? 2 KÝ T?) -> s?
-' ==============================================
 Private Function FromBase36_2_Fixed(ByVal code As String) As Integer
     Dim high As Integer, low As Integer
     
-    If Len(code) <> 2 Then
-        FromBase36_2_Fixed = 0
-        Exit Function
-    End If
+    If Len(code) <> 2 Then Exit Function
     
     high = InStr(CHARSET, Mid(code, 1, 1)) - 1
     low = InStr(CHARSET, Mid(code, 2, 1)) - 1
@@ -1221,16 +1123,17 @@ Private Function FromBase36_2_Fixed(ByVal code As String) As Integer
 End Function
 
 ' ==============================================
-' Encode chu?i s? thành 4 ký t? base36
+' ENCODE STRING ? 4 CHAR
 ' ==============================================
 Private Function EncodeString(ByVal s As String) As String
-    Dim num As Variant
-    Dim result As String
+    Dim num As Double
     Dim i As Integer
+    Dim result As String
     
-    num = CDec(0)
+    num = 0
+    
     For i = 1 To Len(s)
-        num = num * 10 + CLng(Mid(s, i, 1))
+        num = num * 10 + CInt(Mid(s, i, 1))
     Next i
     
     If num = 0 Then
@@ -1238,7 +1141,6 @@ Private Function EncodeString(ByVal s As String) As String
         Exit Function
     End If
     
-    result = ""
     Do While num > 0
         result = Mid(CHARSET, (num Mod 36) + 1, 1) & result
         num = Int(num / 36)
@@ -1248,13 +1150,14 @@ Private Function EncodeString(ByVal s As String) As String
 End Function
 
 ' ==============================================
-' Decode 4 ký t? base36 thành chu?i s?
+' DECODE 4 CHAR ? STRING
 ' ==============================================
 Private Function DecodeString(ByVal code As String) As String
     Dim i As Integer
-    Dim num As Variant
+    Dim num As Double
 
-    num = CDec(0)
+    num = 0
+    
     For i = 1 To Len(code)
         num = num * 36 + (InStr(CHARSET, Mid(code, i, 1)) - 1)
     Next i
@@ -1289,7 +1192,7 @@ Private Sub Command3_Click()
         End If
         If i = 1 Then
             Text1(2).Text = arr(i)
-            txtMST(0).Text = DecodeMST8(arr(i), Text1(1).Text)
+            txtMST(0).Text = DecodeMST14(arr(i), Text1(1).Text)
         End If
         If i = 2 Then
             Text1(3).Text = arr(i)
@@ -1319,14 +1222,17 @@ Private Sub Command3_Click()
     Next
     'Thuc thi viec ma hoa key de gui nguoc lai cho user
     'Thuc hien random ma truoc
-    Randomize
+    'Randomize
     Dim randomNum As Long
-    Do
-        randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
-    Loop While randomNum = CLng(Text1(1).Text)
-    Text1(10).Text = randomNum
+    'Do
+    'randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
+    ' Loop While randomNum = CLng(Text1(1).Text)
+
     'encode mst
-    Text1(7).Text = EncodeMST8(txtMST(0).Text, randomNum)
+    Text1(7).Text = EncodeMST14(txtMST(0).Text, randomNum)
+    Text1(10).Text = randomNum
+    Dim testlaimst As String
+    testlaimst = DecodeMST14(Text1(7).Text, randomNum)
     'Decode 1_2
 
     Text1(8).Text = EncodeWithRandom6(data12, randomNum)
@@ -1340,4 +1246,123 @@ Private Sub Command3_Click()
 
     Text3.Text = Text1(10).Text & "*" & Text1(7).Text & "*" & Text1(8).Text & "*" & Text1(9).Text & "*" & encmac
 End Sub
+'end code mst moi
+Public Function EncodeMST14(ByVal mst As String, ByRef randomNum As Long) As String
+    Dim cleanMST As String
+    Dim totalLen As Integer
+    Dim p1 As String, p2 As String
+    Dim len1 As Integer, len2 As Integer
+    
+    On Error GoTo ErrorHandler
+    
+    cleanMST = Replace(mst, "-", "")
+    
+    If Not IsNumeric(cleanMST) Then GoTo ErrorHandler
+    
+    totalLen = Len(cleanMST)
+    
+    Select Case totalLen
+        Case 10
+            len1 = 5: len2 = 5
+        Case 12
+            len1 = 6: len2 = 6
+        Case 13
+            len1 = 6: len2 = 7
+        Case Else
+            GoTo ErrorHandler
+    End Select
+    
+    p1 = Left(cleanMST, len1)
+    p2 = Right(cleanMST, len2)
+    
+    Randomize
+    randomNum = Int((RANDOM_MAX - RANDOM_MIN + 1) * Rnd + RANDOM_MIN)
+    
+    p1 = MixString(p1, randomNum)
+    p2 = MixString(p2, randomNum)
+    
+    EncodeMST14 = ToBase36_2(randomNum) & _
+                  ToBase36_1(len1) & ToBase36_1(len2) & _
+                  ToBase36_N(CLng(p1), 5) & _
+                  ToBase36_N(CLng(p2), 5)
+    Exit Function
+
+ErrorHandler:
+    EncodeMST14 = "ERROR"
+End Function
+
+' ==============================================
+' DECODE
+' ==============================================
+Public Function DecodeMST14(ByVal code As String, ByRef randomNum As Long) As String
+    Dim len1 As Integer, len2 As Integer
+    Dim rdn As Long
+    Dim p1 As String, p2 As String
+    Dim result As String
+
+    On Error GoTo ErrorHandler
+
+    If Len(code) <> 14 Then GoTo ErrorHandler
+
+    rdn = FromBase36_2(Left(code, 2))
+    randomNum = rdn
+
+    len1 = FromBase36_1(Mid(code, 3, 1))
+    len2 = FromBase36_1(Mid(code, 4, 1))
+
+    p1 = FromBase36_N(Mid(code, 5, 5))
+    p2 = FromBase36_N(Mid(code, 10, 5))
+
+    p1 = Right(String(len1, "0") & p1, len1)
+    p2 = Right(String(len2, "0") & p2, len2)
+
+    p1 = UnmixString(p1, rdn)
+    p2 = UnmixString(p2, rdn)
+
+    result = p1 & p2
+
+    ' auto format MST
+    If Len(result) = 13 Then
+        DecodeMST14 = Left(result, 10) & "-" & Right(result, 3)
+    Else
+        DecodeMST14 = result
+    End If
+
+    Exit Function
+
+ErrorHandler:
+    DecodeMST14 = "ERROR"
+End Function
+ Private Function ToBase36_2(ByVal num As Long) As String
+    ToBase36_2 = Mid(CHARSET, num \ 36 + 1, 1) & _
+                 Mid(CHARSET, num Mod 36 + 1, 1)
+End Function
+
+Private Function FromBase36_2(ByVal code As String) As Long
+    FromBase36_2 = (InStr(CHARSET, Mid(code, 1, 1)) - 1) * 36 + _
+                   (InStr(CHARSET, Mid(code, 2, 1)) - 1)
+End Function
+Private Function ToBase36_N(ByVal num As Long, ByVal length As Integer) As String
+    Dim result As String
+    
+    Do While num > 0
+        result = Mid(CHARSET, (num Mod 36) + 1, 1) & result
+        num = num \ 36
+    Loop
+    
+    ToBase36_N = Right(String(length, "0") & result, length)
+End Function
+
+Private Function FromBase36_N(ByVal code As String) As String
+    Dim i As Integer
+    Dim num As Double
+
+    num = 0
+
+    For i = 1 To Len(code)
+        num = num * 36 + (InStr(CHARSET, Mid(code, i, 1)) - 1)
+    Next i
+
+    FromBase36_N = Format$(num, "0")
+End Function
 
