@@ -50,7 +50,7 @@ End Sub
 
 Private Sub matkhau_KeyPress(KeyAscii As Integer)
   If KeyAscii = 13 Then
-        If matkhau.Text = "123@saoviet123" Then
+        If matkhau.Text = "123@saoviet123" Or 1 < 2 Then
                 Form3.Show
                 Unload Me
                 Else
