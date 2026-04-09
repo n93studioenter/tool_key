@@ -16,7 +16,7 @@ Begin VB.Form Form3
    Begin VB.TextBox Text3 
       Height          =   405
       Left            =   360
-      TabIndex        =   27
+      TabIndex        =   25
       Text            =   "Text3"
       Top             =   4440
       Visible         =   0   'False
@@ -36,14 +36,14 @@ Begin VB.Form Form3
       Height          =   405
       Index           =   1
       Left            =   5640
-      TabIndex        =   25
+      TabIndex        =   23
       Top             =   1200
       Width           =   3615
    End
    Begin VB.TextBox Text2 
       Height          =   375
       Left            =   360
-      TabIndex        =   24
+      TabIndex        =   22
       Text            =   "Text2"
       Top             =   3840
       Visible         =   0   'False
@@ -63,7 +63,7 @@ Begin VB.Form Form3
       EndProperty
       Height          =   1095
       Left            =   240
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   0
       Width           =   10095
       Begin VB.Label Label1 
@@ -81,7 +81,7 @@ Begin VB.Form Form3
          Height          =   255
          Index           =   2
          Left            =   240
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   645
          Width           =   1095
       End
@@ -91,7 +91,7 @@ Begin VB.Form Form3
          Height          =   255
          Index           =   1
          Left            =   2160
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   650
          Width           =   6495
       End
@@ -111,7 +111,7 @@ Begin VB.Form Form3
          Height          =   255
          Index           =   0
          Left            =   2160
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   320
          Width           =   5415
       End
@@ -130,7 +130,7 @@ Begin VB.Form Form3
          Height          =   255
          Index           =   1
          Left            =   120
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   320
          Width           =   1695
       End
@@ -146,28 +146,11 @@ Begin VB.Form Form3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      Index           =   12
-      Left            =   7920
-      TabIndex        =   18
-      Top             =   2160
-      Width           =   1335
-   End
-   Begin VB.TextBox Text1 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   420
       Index           =   11
       Left            =   6480
-      TabIndex        =   17
+      TabIndex        =   16
       Top             =   2160
-      Width           =   1455
+      Width           =   2775
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -182,7 +165,7 @@ Begin VB.Form Form3
       Height          =   420
       Index           =   10
       Left            =   1320
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   2160
       Width           =   615
    End
@@ -199,7 +182,7 @@ Begin VB.Form Form3
       Height          =   420
       Index           =   7
       Left            =   1920
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   2160
       Width           =   2295
    End
@@ -216,7 +199,7 @@ Begin VB.Form Form3
       Height          =   420
       Index           =   8
       Left            =   4200
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   2160
       Width           =   1095
    End
@@ -233,7 +216,7 @@ Begin VB.Form Form3
       Height          =   420
       Index           =   9
       Left            =   5280
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   2160
       Width           =   1215
    End
@@ -250,26 +233,9 @@ Begin VB.Form Form3
       EndProperty
       Height          =   420
       Left            =   9360
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   2160
       Width           =   975
-   End
-   Begin VB.TextBox Text1 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   420
-      Index           =   6
-      Left            =   7920
-      TabIndex        =   10
-      Top             =   1680
-      Width           =   1335
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -286,7 +252,7 @@ Begin VB.Form Form3
       Left            =   6480
       TabIndex        =   9
       Top             =   1680
-      Width           =   1455
+      Width           =   2775
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Laáy key"
@@ -409,7 +375,7 @@ Begin VB.Form Form3
    End
    Begin VB.Label Label1 
       BackColor       =   &H80000016&
-      Caption         =   "Mac"
+      Caption         =   "CPU"
       BeginProperty Font 
          Name            =   "VNI-Times"
          Size            =   9.75
@@ -422,7 +388,7 @@ Begin VB.Form Form3
       Height          =   495
       Index           =   6
       Left            =   5040
-      TabIndex        =   26
+      TabIndex        =   24
       Top             =   1320
       Width           =   495
    End
@@ -441,7 +407,7 @@ Begin VB.Form Form3
       Height          =   495
       Index           =   5
       Left            =   360
-      TabIndex        =   16
+      TabIndex        =   15
       Top             =   2280
       Width           =   1215
    End
@@ -494,7 +460,8 @@ Private Const SECRET_KEY_MST As Long = &H7B4D8E2F
 
 Private Const RANDOM_MIN As Long = 10
 Private Const RANDOM_MAX As Long = 99
-
+Const LICENSE_LEN As Integer = 12
+Const BASE As Integer = 36
 Private Const SECRET_KEYMac As Long = &H5A3C9F2E
 
 Private Const SECRET_KEY2 As Long = 13579
@@ -1185,7 +1152,6 @@ Private Sub Command3_Click()
 
     For i = 0 To UBound(arr)
         Debug.Print arr(i)
-        arr2 = Split(arr(4), "-")
 
         If i = 0 Then
             Text1(1).Text = arr(i)
@@ -1213,9 +1179,8 @@ Private Sub Command3_Click()
             Label2(1).Caption = Format(DecodeLicense6(Text1(4).Text, Text1(1).Text), "#,##0")
         End If
         If i = 4 Then
-            Text1(5).Text = arr2(0)
-            Text1(6).Text = arr2(1)
-            txtMST(1).Text = FormatMAC(DecodeMAC12(arr(4)))
+            Text1(5).Text = arr(i)
+            txtMST(1).Text = DecodeSerialCPUFull(arr(i), Text1(1).Text)
         End If
 
 
@@ -1239,10 +1204,7 @@ Private Sub Command3_Click()
     Text1(9).Text = EncodeLicense6(DecodeLicense6(Text1(4).Text, Text1(1).Text), randomNum)
     Dim encmac As String
     encmac = EncodeMAC12(txtMST(1).Text)
-    Dim arr4() As String
-    arr4 = Split(encmac, "-")
-    Text1(11).Text = arr4(0)
-    Text1(12).Text = arr4(1)
+    Text1(11).Text = EncodeSerialCPUFull(txtMST(1).Text, randomNum)
 
     Text3.Text = Text1(10).Text & "*" & Text1(7).Text & "*" & Text1(8).Text & "*" & Text1(9).Text & "*" & encmac
 End Sub
@@ -1366,3 +1328,136 @@ Private Function FromBase36_N(ByVal code As String) As String
     FromBase36_N = Format$(num, "0")
 End Function
 
+  Public Function EncodeSerialCPUFull(ByVal serialHex As String, ByRef randomNum As Long) As String
+    Dim bytes() As Byte
+    Dim combined() As Byte
+    Dim i As Integer
+    
+    ' Chuy?n hex sang byte array
+    ReDim bytes(Len(serialHex) \ 2 - 1)
+    For i = 0 To Len(serialHex) \ 2 - 1
+        bytes(i) = CByte("&H" & Mid(serialHex, i * 2 + 1, 2))
+    Next
+    
+    ' Thêm randomNum (4 byte) vào d?u
+    ReDim combined(UBound(bytes) + 4)
+    combined(0) = randomNum And &HFF
+    combined(1) = (randomNum \ 256) And &HFF
+    combined(2) = (randomNum \ 65536) And &HFF
+    combined(3) = (randomNum \ 16777216) And &HFF
+    For i = 0 To UBound(bytes)
+        combined(i + 4) = bytes(i)
+    Next
+    
+    ' XOR mã hóa
+    For i = 0 To UBound(combined)
+        combined(i) = combined(i) Xor (SECRET_KEY And &HFF)
+    Next
+    
+    ' Chuy?n sang Base36
+    EncodeSerialCPUFull = BytesToBase36(combined)
+End Function
+
+' ==============================================
+' DECODE: Base36 -> Serial (KHÔNG c?n serial g?c)
+' ==============================================
+Public Function DecodeSerialCPUFull(ByVal code As String, ByRef randomNum As Long) As String
+    Dim bytes() As Byte
+    Dim i As Integer
+    Dim hexResult As String
+
+    ' Base36 -> bytes
+    bytes = Base36ToBytes(code)
+
+    ' XOR gi?i mã
+    For i = 0 To UBound(bytes)
+        bytes(i) = bytes(i) Xor (SECRET_KEY And &HFF)
+    Next
+
+    ' L?y randomNum (4 byte d?u)
+    If UBound(bytes) >= 3 Then
+        randomNum = bytes(0) + bytes(1) * 256 + bytes(2) * 65536 + bytes(3) * 16777216
+    End If
+
+    ' Chuy?n ph?n còn l?i thành hex
+    hexResult = ""
+    For i = 4 To UBound(bytes)
+        hexResult = hexResult & Right("0" & Hex(bytes(i)), 2)
+    Next
+
+    DecodeSerialCPUFull = hexResult
+End Function
+' ==============================================
+' HÀM CHUY?N BYTES -> BASE36
+' ==============================================
+Private Function BytesToBase36(bytes() As Byte) As String
+    Dim temp() As Long
+    Dim result As String
+    Dim remainder As Integer
+    Dim i As Integer
+    
+    ReDim temp(UBound(bytes))
+    For i = 0 To UBound(bytes)
+        temp(i) = bytes(i)
+    Next
+    
+    result = ""
+    Do
+        remainder = 0
+        For i = UBound(temp) To 0 Step -1
+            remainder = remainder * 256 + temp(i)
+            temp(i) = remainder \ BASE
+            remainder = remainder Mod BASE
+        Next
+        result = Mid(CHARSET, remainder + 1, 1) & result
+        
+        Dim allZero As Boolean
+        allZero = True
+        For i = 0 To UBound(temp)
+            If temp(i) <> 0 Then
+                allZero = False
+                Exit For
+            End If
+        Next
+        If allZero Then Exit Do
+    Loop
+    
+    BytesToBase36 = result
+End Function
+
+' ==============================================
+' HÀM CHUY?N BASE36 -> BYTES
+' ==============================================
+Private Function Base36ToBytes(base36Str As String) As Byte()
+    Dim result() As Byte
+    Dim i As Integer
+    Dim j As Integer
+    Dim val As Integer
+    Dim carry As Long
+
+    ReDim result(0)
+    result(0) = 0
+
+    For i = 1 To Len(base36Str)
+        val = InStr(CHARSET, Mid(base36Str, i, 1)) - 1
+        If val < 0 Or val >= BASE Then
+            Base36ToBytes = Array(0)
+            Exit Function
+        End If
+
+        carry = val
+        For j = 0 To UBound(result)
+            carry = carry + result(j) * BASE
+            result(j) = carry And &HFF
+            carry = carry \ 256
+        Next
+
+        Do While carry > 0
+            ReDim Preserve result(UBound(result) + 1)
+            result(UBound(result)) = carry And &HFF
+            carry = carry \ 256
+        Loop
+    Next
+
+    Base36ToBytes = result
+End Function
