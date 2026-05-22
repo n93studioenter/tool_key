@@ -6,13 +6,47 @@ Begin VB.Form Form3
    ClientHeight    =   2700
    ClientLeft      =   45
    ClientTop       =   330
-   ClientWidth     =   10515
+   ClientWidth     =   12750
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   2700
-   ScaleWidth      =   10515
+   ScaleWidth      =   12750
    StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
+      Index           =   6
+      Left            =   9480
+      TabIndex        =   27
+      Top             =   2160
+      Width           =   2055
+   End
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
+      Index           =   0
+      Left            =   9480
+      TabIndex        =   26
+      Top             =   1680
+      Width           =   2055
+   End
    Begin VB.TextBox Text3 
       Height          =   405
       Left            =   360
@@ -35,10 +69,10 @@ Begin VB.Form Form3
       ForeColor       =   &H0000C000&
       Height          =   405
       Index           =   1
-      Left            =   5640
+      Left            =   6480
       TabIndex        =   23
       Top             =   1200
-      Width           =   3615
+      Width           =   5055
    End
    Begin VB.TextBox Text2 
       Height          =   375
@@ -65,7 +99,26 @@ Begin VB.Form Form3
       Left            =   240
       TabIndex        =   17
       Top             =   0
-      Width           =   10095
+      Width           =   12375
+      Begin VB.Label Label3 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Label3"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000000&
+         Height          =   375
+         Left            =   5040
+         TabIndex        =   28
+         Top             =   320
+         Width           =   7215
+      End
       Begin VB.Label Label1 
          BackColor       =   &H80000016&
          Caption         =   "Soá chöùng töø"
@@ -150,7 +203,7 @@ Begin VB.Form Form3
       Left            =   6480
       TabIndex        =   16
       Top             =   2160
-      Width           =   2775
+      Width           =   3015
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -232,7 +285,7 @@ Begin VB.Form Form3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      Left            =   9360
+      Left            =   11640
       TabIndex        =   10
       Top             =   2160
       Width           =   975
@@ -252,7 +305,7 @@ Begin VB.Form Form3
       Left            =   6480
       TabIndex        =   9
       Top             =   1680
-      Width           =   2775
+      Width           =   3015
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Laáy key"
@@ -266,7 +319,7 @@ Begin VB.Form Form3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      Left            =   9360
+      Left            =   11640
       TabIndex        =   7
       Top             =   1680
       Width           =   975
@@ -354,7 +407,7 @@ Begin VB.Form Form3
       Left            =   1320
       TabIndex        =   1
       Top             =   1200
-      Width           =   3495
+      Width           =   3975
    End
    Begin VB.CommandButton Command3 
       Caption         =   "Daùn key"
@@ -368,7 +421,7 @@ Begin VB.Form Form3
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   9360
+      Left            =   11640
       TabIndex        =   0
       Top             =   1200
       Width           =   975
@@ -385,9 +438,9 @@ Begin VB.Form Form3
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      Height          =   255
       Index           =   6
-      Left            =   5040
+      Left            =   5760
       TabIndex        =   24
       Top             =   1320
       Width           =   495
@@ -457,7 +510,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Private Const SECRET_KEY_MST As Long = &H7B4D8E2F
-
+Private Const Base64Table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 Private Const RANDOM_MIN As Long = 10
 Private Const RANDOM_MAX As Long = 99
 Const LICENSE_LEN As Integer = 12
@@ -468,7 +521,239 @@ Private Const SECRET_KEY2 As Long = 13579
 Private Const BASE36 As String = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 Private Const SECRET_KEY As Byte = &H5A    ' Khóa bí m?t
 Private Const CHARSET As String = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
+Public Function CInt5(st As String) As Double
+    Dim X As Double
+    If IsNumeric(st) Then
+        X = CDbl(st)
+        If X >= -32768 And X <= 32767 Then
+            CInt5 = CInt(X)
+        Else
+            CInt5 = 0
+        End If
+    Else
+        CInt5 = 0
+    End If
+End Function
+Public Function VniToUnicode(st As String) As String
+    Dim i As Integer, L As Integer, c1 As Integer, c2 As Integer, c As Integer
+        
+    L = Len(st)
+    i = 1
+    Do While i <= L
+        c1 = CInt5(Asc(Mid(st, i, 1)))
+        c = 0
+        If i = L Then GoTo a
+        c2 = CInt5(Asc(Mid(st, i + 1, 1)))
+        If c1 = 97 Then
+            Select Case c2
+                Case 248:   c = 224
+                Case 249:   c = 225
+                Case 251:   c = 7843
+                Case 245:   c = 227
+                Case 239:   c = 7841
+                Case 226:   c = 226
+                Case 224:   c = 7847
+                Case 225:   c = 7845
+                Case 229:   c = 7849
+                Case 227:   c = 7851
+                Case 228:   c = 7853
+                Case 234:   c = 259
+                Case 232:   c = 7857
+                Case 233:   c = 7855
+                Case 250:   c = 7859
+                Case 252:   c = 7861
+                Case 235:   c = 7863
+            End Select
+        End If
+        If c1 = 65 Then
+            Select Case c2
+                Case 216:   c = 192
+                Case 217:   c = 193
+                Case 219:   c = 7842
+                Case 213:   c = 195
+                Case 207:   c = 7840
+                Case 194:   c = 194
+                Case 192:   c = 7846
+                Case 193:   c = 7844
+                Case 197:   c = 7848
+                Case 195:   c = 7850
+                Case 196:   c = 7852
+                Case 200:   c = 7856
+                Case 201:   c = 7854
+                Case 218:   c = 7858
+                Case 220:   c = 7860
+                Case 203:   c = 7862
+                Case 202:   c = 258
+            End Select
+        End If
+        If c1 = 69 Then
+            Select Case c2
+                Case 216:   c = 200
+                Case 217:   c = 201
+                Case 219:   c = 7866
+                Case 213:   c = 7868
+                Case 207:   c = 7864
+                Case 194:   c = 202
+                Case 192:   c = 7872
+                Case 193:   c = 7870
+                Case 197:   c = 7874
+                Case 195:   c = 7876
+                Case 196:   c = 7878
+            End Select
+        End If
+        If c1 = 79 Then
+            Select Case c2
+                Case 216:   c = 210
+                Case 217:   c = 211
+                Case 219:   c = 7886
+                Case 213:   c = 213
+                Case 207:   c = 7884
+                Case 194:   c = 212
+                Case 192:   c = 7890
+                Case 193:   c = 7888
+                Case 197:   c = 7892
+                Case 195:   c = 7894
+                Case 196:   c = 7896
+            End Select
+        End If
+        If c1 = 212 Then
+            Select Case c2
+                Case 216:   c = 7900
+                Case 217:   c = 7898
+                Case 219:   c = 7902
+                Case 213:   c = 7904
+                Case 207:   c = 7906
+            End Select
+        End If
+        If c1 = 85 Then
+            Select Case c2
+                Case 216:   c = 217
+                Case 217:   c = 218
+                Case 219:   c = 7910
+                Case 213:   c = 360
+                Case 207:   c = 7908
+            End Select
+        End If
+        If c1 = 214 Then
+            Select Case c2
+                Case 216:   c = 7914
+                Case 217:   c = 7912
+                Case 219:   c = 7916
+                Case 213:   c = 7918
+                Case 207:   c = 7920
+            End Select
+        End If
+        If c1 = 89 Then
+            Select Case c2
+                Case 216:   c = 7922
+                Case 217:   c = 221
+                Case 219:   c = 7926
+                Case 213:   c = 7928
+            End Select
+        End If
+        If c1 = 101 Then
+            Select Case c2
+                Case 248:   c = 232
+                Case 249:   c = 233
+                Case 251:   c = 7867
+                Case 245:   c = 7869
+                Case 239:   c = 7865
+                Case 226:   c = 234
+                Case 224:   c = 7873
+                Case 225:   c = 7871
+                Case 229:   c = 7875
+                Case 227:   c = 7877
+                Case 228:   c = 7879
+            End Select
+        End If
+        If c1 = 111 Then
+            Select Case c2
+                Case 248:   c = 242
+                Case 249:   c = 243
+                Case 251:   c = 7887
+                Case 245:   c = 245
+                Case 239:   c = 7885
+                Case 226:   c = 244
+                Case 224:   c = 7891
+                Case 225:   c = 7889
+                Case 229:   c = 7893
+                Case 227:   c = 7895
+                Case 228:   c = 7897
+            End Select
+        End If
+        If c1 = 244 Then
+            Select Case c2
+                Case 248:   c = 7901
+                Case 249:   c = 7899
+                Case 251:   c = 7903
+                Case 245:   c = 7905
+                Case 239:   c = 7907
+            End Select
+        End If
+        If c1 = 117 Then
+            Select Case c2
+                Case 248:   c = 249
+                Case 249:   c = 250
+                Case 251:   c = 7911
+                Case 245:   c = 361
+                Case 239:   c = 7909
+            End Select
+        End If
+        If c1 = 249 And c2 = 246 Then c = 432
+        If c1 = 246 Then
+            Select Case c2
+                Case 248:   c = 7915
+                Case 249:   c = 7913
+                Case 251:   c = 7917
+                Case 245:   c = 7919
+                Case 239:   c = 7921
+            End Select
+        End If
+        If c1 = 121 Then
+            Select Case c2
+                Case 248:   c = 7923
+                Case 249:   c = 253
+                Case 251:   c = 7927
+                Case 245:   c = 7929
+            End Select
+        End If
+        If c > 0 Then
+            i = i + 2
+            GoTo KT
+        End If
+a:
+        Select Case c1
+            Case 241:   c = 273
+            Case 236:  c = 236
+            Case 204:   c = 204
+            Case 237:  c = 237
+            Case 205:   c = 205
+            Case 230:  c = 7881
+            Case 198:    c = 7880
+            Case 243:  c = 297
+            Case 211:   c = 296
+            Case 242:  c = 7883
+            Case 210:   c = 7882
+            Case 244:   c = 417
+            Case 246:   c = 432
+            Case 238:   c = 7925
+            Case 209:   c = 272
+            Case 212:   c = 416
+            Case 214:   c = 431
+            Case 206:   c = 7924
+        End Select
+        If c > 0 Then
+            i = i + 1
+            GoTo KT
+        End If
+        If c = 0 Then
+            i = i + 1
+            c = c1
+        End If
+KT:
+        VniToUnicode = VniToUnicode + ChrW(c)
+    Loop
+End Function
 'Mã hóa cho so chung tu
 Public Function EncodeLicense6(ByVal num As Long, ByRef randomNum As Long) As String
 'Dim randomNum As Long
@@ -1147,7 +1432,7 @@ Private Sub Command3_Click()
     Dim encoded10 As String
     s = Text2.Text
     arr = Split(s, "*")
-
+    Dim decodeTencty As String
 
 
     For i = 0 To UBound(arr)
@@ -1182,7 +1467,11 @@ Private Sub Command3_Click()
             Text1(5).Text = arr(i)
             txtMST(1).Text = DecodeSerialCPUFull(arr(i), Text1(1).Text)
         End If
-
+        If i = 5 Then
+            Text1(0).Text = arr(i)
+            Label3.Caption = VniToUnicode(DecodeLicense(arr(i)))
+            decodeTencty = DecodeLicense(arr(i))
+        End If
 
     Next
     'Thuc thi viec ma hoa key de gui nguoc lai cho user
@@ -1205,8 +1494,8 @@ Private Sub Command3_Click()
     Dim encmac As String
     encmac = EncodeMAC12(txtMST(1).Text)
     Text1(11).Text = EncodeSerialCPUFull(txtMST(1).Text, randomNum)
-
-    Text3.Text = Text1(10).Text & "*" & Text1(7).Text & "*" & Text1(8).Text & "*" & Text1(9).Text & "*" & encmac
+    Text1(6).Text = EncodeLicense(decodeTencty, randomNum)
+    Text3.Text = Text1(10).Text & "*" & Text1(7).Text & "*" & Text1(8).Text & "*" & Text1(9).Text & "*" & Text1(11).Text & "*" & Text1(6).Text
 End Sub
 'end code mst moi
 Public Function EncodeMST14(ByVal mst As String, ByRef randomNum As Long) As String
@@ -1461,3 +1750,105 @@ Private Function Base36ToBytes(base36Str As String) As Byte()
 
     Base36ToBytes = result
 End Function
+'ma hoa ten cong ty
+'========================= ENCODE =========================
+Public Function EncodeLicense(ByVal TenCongTy As String, ByVal SoBiMat As String) As String
+    Dim s As String
+    
+    TenCongTy = Trim(TenCongTy)
+    If Len(SoBiMat) <> 2 Or Not IsNumeric(SoBiMat) Then SoBiMat = "00"
+    
+    s = TenCongTy & "|" & SoBiMat
+    
+    EncodeLicense = Base64Encode(StrConv(s, vbFromUnicode))
+End Function
+
+'========================= DECODE (C?n thêm SoBiMat) =========================
+Public Function DecodeLicense(ByVal key As String) As String
+    Dim s As String
+    
+    s = StrConv(Base64Decode(key), vbUnicode)
+    
+    If InStr(s, "|") > 0 Then
+        DecodeLicense = Left(s, InStr(s, "|") - 1)
+    Else
+        DecodeLicense = s
+    End If
+End Function
+
+
+Public Function Base64Encode(inData() As Byte) As String
+    Dim i As Long
+    Dim outStr As String
+    Dim c1 As Byte, c2 As Byte, c3 As Byte
+
+    For i = 0 To UBound(inData) Step 3
+        c1 = inData(i)
+
+        If i + 1 <= UBound(inData) Then c2 = inData(i + 1) Else c2 = 0
+        If i + 2 <= UBound(inData) Then c3 = inData(i + 2) Else c3 = 0
+
+        outStr = outStr & _
+                 Mid(Base64Table, (c1 \ 4) + 1, 1) & _
+                 Mid(Base64Table, ((c1 And 3) * 16 + (c2 \ 16)) + 1, 1) & _
+                 IIf(i + 1 <= UBound(inData), Mid(Base64Table, ((c2 And 15) * 4 + (c3 \ 64)) + 1, 1), "=") & _
+                 IIf(i + 2 <= UBound(inData), Mid(Base64Table, (c3 And 63) + 1, 1), "=")
+    Next i
+
+    Base64Encode = outStr
+End Function
+Public Function Base64Decode(ByVal sInput As String) As Byte()
+    Dim i As Long, j As Long
+    Dim c(3) As Long
+    Dim out() As Byte
+    Dim outLen As Long
+    Dim pos As Long
+    
+    ' tính d? dài th?t
+    outLen = (Len(sInput) \ 4) * 3
+    
+    If Right(sInput, 2) = "==" Then
+        outLen = outLen - 2
+    ElseIf Right(sInput, 1) = "=" Then
+        outLen = outLen - 1
+    End If
+    
+    If outLen <= 0 Then
+        ReDim out(0)
+        Base64Decode = out
+        Exit Function
+    End If
+    
+    ReDim out(outLen - 1)
+    
+    pos = 0
+    
+    For i = 1 To Len(sInput) Step 4
+        For j = 0 To 3
+            If Mid(sInput, i + j, 1) = "=" Then
+                c(j) = 0
+            Else
+                c(j) = InStr(1, Base64Table, Mid(sInput, i + j, 1)) - 1
+            End If
+        Next j
+        
+        If pos <= UBound(out) Then
+            out(pos) = (c(0) * 4) Or (c(1) \ 16)
+            pos = pos + 1
+        End If
+        
+        If pos <= UBound(out) Then
+            out(pos) = ((c(1) And 15) * 16) Or (c(2) \ 4)
+            pos = pos + 1
+        End If
+        
+        If pos <= UBound(out) Then
+            out(pos) = ((c(2) And 3) * 64) Or c(3)
+            pos = pos + 1
+        End If
+    Next i
+    
+    Base64Decode = out
+End Function
+
+
